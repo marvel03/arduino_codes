@@ -1,3 +1,8 @@
+// all the raw values collected are filtered using complimentary filters and low pass filters respectively into variables
+// theta and phi
+//note: z axis values are not processed in this code as the values are not stable and reliable, but just in case if needed the raw values 
+// have been collected
+// note : theat and phi are only valid between -90 to 90
 #include <Wire.h>
 #include <Math.h>
 //////
