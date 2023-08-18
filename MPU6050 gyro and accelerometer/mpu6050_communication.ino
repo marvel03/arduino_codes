@@ -102,15 +102,6 @@ void processGyroData(){
 }
 
 void printData(){
-//Serial.print("GYRO: ");Serial.print(",");
-//Serial.print(rotX); Serial.print(",");Serial.print(rotY);Serial.print(",");Serial.print(rotZ);Serial.print(",");
-//Serial.print(rotXFiltered); Serial.print(",");Serial.print(rotYFiltered);Serial.print(",");Serial.print(rotZFiltered);Serial.print(",");
-//Serial.print(" ACCEL: ");Serial.print(",");Serial.print(gforceX);Serial.print(",");Serial.print(gforceY);Serial.print(",");Serial.print(gforceZ);
-//Serial.print(" AccelAngles: ");Serial.print(AthetaX);Serial.print(",");Serial.println(AthetaY);
-//Serial.print(AthetaX);Serial.print(",");Serial.print(AthetaXFiltered);Serial.print(",");Serial.print(AthetaY);Serial.print(",");
-//Serial.print(AthetaYFiltered);
-//Serial.print(",");
-//Serial.println((int)theta);
 Serial.print((int)theta);Serial.print(',');Serial.println((int)phi);
 
 }
