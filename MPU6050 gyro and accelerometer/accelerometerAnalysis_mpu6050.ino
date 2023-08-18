@@ -1,8 +1,6 @@
 #include<Wire.h>
 #define MPU 0b1101000
 float accelX,accelY,accelZ;
-float Vxz[]={0,0};
-float Vyz[]={0,0};
 float Axpack[]={0,0,0};// {rawValue, oldFilteredValue, newFilteredValue}
 float Aypack[]={0,0,0};// {rawValue, oldFilteredValue, newFilteredValue}
 float Azpack[]={0,0,0};// {rawValue, oldFilteredValue, newFilteredValue}
@@ -23,11 +21,6 @@ void loop() {
 //  Serial.print(Aypack[2]);
 //  Serial.print(",");
 //  Serial.println(Azpack[2]);
- normalizeVector(Vxz[0],Vxz[1],Axpack[2],Azpack[2]);
- normalizeVector(Vyz[0],Vyz[1],Aypack[2],Azpack[2]);
- //Serial.println("Vxz: "+(String)Vxz[0]+","+(String)Vxz[1]);
- Serial.print((String)Vxz[0]+","+(String)Vxz[1]+","); 
- Serial.println((String)Vyz[0]+","+(String)Vyz[1]); 
 }
 void configureMPU(){
   Wire.beginTransmission(MPU); //This is the I2C address of the MPU (b1101000/b1101001 for AC0 low/high datasheet sec. 9.2)
@@ -43,11 +36,7 @@ void configureMPU(){
   Wire.write(0x08);
   Wire.endTransmission();
 }
-void normalizeVector(float &a,float &b,float v1,float v2){
-  a=v1/sqrt(sq(v1)+sq(v2));
-  b=v2/sqrt(sq(v1)+sq(v2));
-  
-}
+
 void getAccelData(){
   Wire.beginTransmission(MPU);
   Wire.write(0x3B);
