@@ -1,3 +1,5 @@
+// implement this code in proceesing using java 
+
 import processing.serial.*;
 Serial port;
 String angleX="0";
@@ -10,7 +12,7 @@ void setup(){
 size(500,500,P3D);
 background(0);
 //Serial.list()[0]
-port=new Serial(this,"COM4",9600);
+port=new Serial(this,"COM4",9600);//  change these values based on the COM port and baud rate 
 port.bufferUntil('\n');
 }
 void draw(){
